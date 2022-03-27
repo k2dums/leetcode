@@ -1,0 +1,35 @@
+class Solution:
+    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
+        lister=[]
+        index=list(range(0,len(mat)))
+        for row_no,row in enumerate(mat):
+            soldiers=0
+            civilians=0
+            for people in row:
+                if people ==1:
+                    soldiers+=1
+            lister.append(soldiers)
+           
+
+        
+        #sorting
+        for i in range(len(lister)):
+            for j in range(i+1,len(lister)):
+                if lister[i] > lister[j]:
+                    temp=lister[i]
+                    lister[i]=lister[j]
+                    lister[j]=temp
+                    temp=index[i]
+                    index[i]=index[j]
+                    index[j]=temp
+                if lister[i ]== lister[j]:
+                    if index[i]>index[j]:
+                        temp=index[i]
+                        index[i]=index[j]
+                        index[j]=temp
+        return index[:k]
+            
+        
+            
+                    
+            
