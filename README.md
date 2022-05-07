@@ -1,2 +1,2 @@
 # leetcode
-All my programs are written in Python3 not Python
+All my programs are written in Python3 
